@@ -8,6 +8,7 @@ let lastPlayerTime = player.currentTime();
 player.on('play', startPlaying);
 player.on('pause', pausePlaying);
 
+let txtWatchTime = document.getElementById("watchTime");
 
 function startPlaying() {
     console.log("START");
@@ -17,6 +18,7 @@ function startPlaying() {
         }
         lastPlayerTime = player.currentTime();
         console.log(totalTime + "s")
+        txtWatchTime.innerHTML = totalTime + "s" + "/" + parseInt(player.duration(), 10) + "s";
     }, 1000);
 }
 
